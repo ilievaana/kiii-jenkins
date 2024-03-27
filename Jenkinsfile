@@ -17,9 +17,4 @@ node {
         }
     }
 
-    stage('Deploy') {
-        // Update Dockerfile copy command based on the location of index.html
-        def dockerfilePath = "${env.WORKSPACE}/jenkins/jenkins-data/workspace/kiii-jenkins_dev/Dockerfile"
-        sh "sed -i 's|COPY index.html /usr/share/nginx/html/index.html|COPY ${env.WORKSPACE}/jenkins/jenkins-data/workspace/kiii-jenkins_dev/index.html /usr/share/nginx/html/index.html|' ${dockerfilePath}"
-    }
 }
